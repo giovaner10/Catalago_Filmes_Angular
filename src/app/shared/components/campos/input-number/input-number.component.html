@@ -1,0 +1,18 @@
+<div [formGroup]="formGroup">
+    <mat-form-field class="full-width">
+        <input matInput 
+                [placeholder]="titulo" 
+                [name]="controlName" 
+                type="number"
+                [step]="step"
+                [min]="minimo"
+                [max]="maximo" 
+                [formControlName]="controlName">
+                <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'required')">Campo obrigatorio</mat-error> 
+                <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'max')">Maximo de {{validacao.lengthValidar(formControl, 'max')}}  </mat-error> 
+                <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'min')"> Necessita de no minimo {{validacao.lengthValidar(formControl, 'min')}} </mat-error> 
+
+    
+    
+      </mat-form-field>
+      </div>
